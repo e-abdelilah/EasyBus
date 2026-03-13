@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: easybus-data
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/e-abdelilah/EasyBus.git
+    targetRevision: HEAD
+    path: k8s-manifests/easybus-data
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: easybus-data
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

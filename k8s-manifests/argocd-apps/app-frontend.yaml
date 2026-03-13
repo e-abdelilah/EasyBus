@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: easybus-frontend
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: frontend=abdelilahxr/easybus-frontend
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/git-branch: master
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/e-abdelilah/EasyBus.git
+    targetRevision: HEAD
+    path: k8s-manifests/easybus-frontend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: easybus-frontend
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

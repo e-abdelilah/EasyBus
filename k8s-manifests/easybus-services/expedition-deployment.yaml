@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: expedition-service
+  namespace: easybus-services
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: expedition-service
+  template:
+    metadata:
+      labels:
+        app: expedition-service
+    spec:
+      containers:
+      - name: expedition-service
+        image: abdelilahxr/expedition-service:latest
+        ports:
+        - containerPort: 8082
+        envFrom:
+        - configMapRef:
+            name: expedition-config
+        env:
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: expedition-secret
+              key: DB_PASSWORD

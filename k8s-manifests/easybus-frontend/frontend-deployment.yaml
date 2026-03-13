@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: easybus-frontend
+  namespace: easybus-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: easybus-frontend
+  template:
+    metadata:
+      labels:
+        app: easybus-frontend
+    spec:
+      containers:
+      - name: easybus-frontend
+        image: abdelilahxr/easybus-frontend:latest
+        ports:
+        - containerPort: 80

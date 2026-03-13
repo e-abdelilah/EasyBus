@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-gateway-config
+  namespace: easybus-gateway
+data:
+  EUREKA_URI: http://eureka-server.easybus-gateway.svc.cluster.local:8761/eureka
+  # format: servicename.namespace.svc.cluster.local — how services talk across namespaces

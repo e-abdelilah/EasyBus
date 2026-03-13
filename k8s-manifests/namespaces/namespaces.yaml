@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: easybus-frontend
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: easybus-gateway
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: easybus-services
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: easybus-data

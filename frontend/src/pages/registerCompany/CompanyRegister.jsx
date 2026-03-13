@@ -151,7 +151,7 @@ export default function CompanyRegister() {
               onChange={(e) =>
                 setForm({ ...form, companyName: e.target.value })
               }
-              placeholder="e.g. ShuBilet Ltd."
+              placeholder="e.g. EesyBus Ltd."
             />
             {errors.companyName && (
               <div className="error">{errors.companyName}</div>

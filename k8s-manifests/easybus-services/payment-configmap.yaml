@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: member-config
+  name: payment-config
   namespace: easybus-services
 data:
   SPRING_DATASOURCE_URL: jdbc:postgresql://postgres.easybus-data.svc.cluster.local:5432/easybus_db

@@ -4,7 +4,7 @@ metadata:
   name: security-config
   namespace: easybus-services
 data:
-  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres.easybus-data.svc.cluster.local:5432/easybus_db
-  SPRING_DATASOURCE_USERNAME: easybus
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres.easybus-data.svc.cluster.local:5432/k8sdb
+  SPRING_DATASOURCE_USERNAME: k8user
   EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server.easybus-gateway.svc.cluster.local:8761/eureka
   # cross-namespace DNS: servicename.namespace.svc.cluster.local

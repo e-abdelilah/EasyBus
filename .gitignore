@@ -154,3 +154,8 @@ FlightInitializer.java
 *.njsproj
 *.sln
 *.sw?
+*-secret.yaml
+postgres-secret.yaml
+# Keep plain service secrets local only
+k8s-manifests/easybus-services/*-secret.yaml
+!k8s-manifests/easybus-services/*-sealed-secret.yaml
